@@ -1,2 +1,7 @@
-package com.example.demo.entity.order;public class OrderStatus {
+package com.example.demo.entity.order;
+
+public enum OrderStatus {
+    CREATED,
+    FILLED,
+    CANCELED,
 }

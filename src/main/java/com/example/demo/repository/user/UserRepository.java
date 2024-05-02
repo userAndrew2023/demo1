@@ -1,9 +1,10 @@
-package com.example.demo.repository.order;
+package com.example.demo.repository.user;
 
-import com.example.demo.entity.order.Order;
+import com.example.demo.entity.user.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface OrderRepository extends CrudRepository<Order, Long> {
+public interface UserRepository extends CrudRepository<User, Long> {
+    User findByEmail(String email);
 }

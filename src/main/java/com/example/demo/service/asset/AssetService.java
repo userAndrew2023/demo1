@@ -1,12 +1,10 @@
-package com.example.demo.service;
+package com.example.demo.service.asset;
 
 import com.example.demo.entity.asset.Asset;
 import com.example.demo.repository.asset.AssetRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -19,10 +17,23 @@ public class AssetService {
         this.assetRepository = assetRepository;
     }
 
-    public List<Asset> getAll() {
-        List<Asset> assetList = new ArrayList<>();
-        this.assetRepository.findAll().forEach(assetList::add);
+    public List<Asset> getByUser(Long userId) {
+        return this.assetRepository.findByUserId(userId);
+    }
 
-        return assetList;
+    public Asset getById(Long id) {
+        return this.assetRepository.findById(id).orElse(null);
+    }
+
+    public Asset create() {
+        return this.assetRepository.save(null);
+    }
+
+    public Asset update() {
+        return this.assetRepository.save(null);
+    }
+
+    public void delete(Long id) {
+        this.assetRepository.deleteById(id);
     }
 }

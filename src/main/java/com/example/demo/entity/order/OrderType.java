@@ -1,2 +1,6 @@
-package com.example.demo.entity.order;public enum OrderType {
+package com.example.demo.entity.order;
+
+public enum OrderType {
+    LIMIT,
+    MARKET
 }
